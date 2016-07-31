@@ -1,0 +1,16 @@
+version: '2'
+services:
+  flapjack:
+    build: .
+    # image: benningm/flapjack:latest
+    ports:
+     - "3080:3080"
+    depends_on:
+     - redis
+    environment:
+     - 'FLAPJACK_LOGLEVEL=INFO'
+     - 'REDIS_HOST=redis'
+     - 'REDIS_PORT=6379'
+     - 'REDIS_DB=0'
+  redis:
+    image: redis
