@@ -8,7 +8,7 @@ RUN gpg -a --export 803709B6 | apt-key add -
 RUN echo "deb http://packages.flapjack.io/deb/v1 trusty main" | tee /etc/apt/sources.list.d/flapjack.list
 RUN apt-get update
 RUN apt-cache policy flapjack
-RUN apt-get install -y flapjack
+RUN apt-get install -y flapjack=1.6.0~trusty
 
 EXPOSE 3080 3081 3071
 
